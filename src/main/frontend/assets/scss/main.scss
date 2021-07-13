@@ -1,8 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
-*,
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat+Subrayada&family=Pattaya&family=Rock+Salt&display=swap');*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -13,9 +13,43 @@
   tab-size: 4;
 }
 
-.pet-image {
-  width: 40%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+$title-font: 'Montserrat Subrayada', sans-serif;
+$title-font2: 'Rock Salt', cursive;
+$title-font3: 'Allura', cursive;
+$title-font4: 'Pattaya', sans-serif;
+
+$white: #ffffff;
+
+body{
+  color: $white;
 }
+
+// ######### Landing Page ###########
+.landing-image{
+  padding: 4em;
+  background: url("https://wallpapercave.com/wp/wp3395293.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+}
+
+.landing-text{
+  font-family: $title-font4;
+  text-align: left;
+  font-style: italic;
+  color: $white;
+}
+.green{
+  padding: 0px 18px ;
+  border: 5px solid green;
+  border-radius: 5rem ;
+  color: green;
+}
+
+.featured-food, .about-us, .location-map{
+  margin: 10px 0px;
+  padding: 0px 18px;
+  border: 3px solid green;
+  border-radius: 1rem ;
+}
+// ######### Landing Page END ###########
