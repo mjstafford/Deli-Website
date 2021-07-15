@@ -3,7 +3,7 @@ CREATE TABLE items (
   name VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   cost NUMERIC NOT NULL,
-  image VARCHAR(255) NOT NULL,
+  image VARCHAR(255),
   featured BOOLEAN NOT NULL DEFAULT false,
   food_category_id INTEGER REFERENCES food_categories(id)
 );
