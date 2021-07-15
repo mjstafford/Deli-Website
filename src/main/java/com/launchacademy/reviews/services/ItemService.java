@@ -21,4 +21,8 @@ public class ItemService {
   public void save(Items item) {
     itemsRepository.save(item);
   }
+
+  public Iterable<Items> findByFeaturedTrue() {
+    return itemsRepository.findByFeaturedTrue();
+  }
 }

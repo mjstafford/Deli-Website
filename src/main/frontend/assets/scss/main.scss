@@ -2,7 +2,7 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
 
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat+Subrayada&family=Pattaya&family=Rock+Salt&display=swap');*,
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat+Subrayada&family=Pattaya&family=Rock+Salt&family=Nunito:wght@700&family=Permanent+Marker&display=swap');*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -17,23 +17,41 @@ $title-font: 'Montserrat Subrayada', sans-serif;
 $title-font2: 'Rock Salt', cursive;
 $title-font3: 'Allura', cursive;
 $title-font4: 'Pattaya', sans-serif;
+$title-font5: 'Nunito', sans-serif;
+$title-font6: 'Permanent Marker', cursive;
 
 $white: #ffffff;
 
 body{
   color: $white;
+    background: url("https://wallpapercave.com/wp/wp3395293.jpg");
+    background-repeat: repeat-y;
 }
 
 .image{
   margin: 10px 20px 10px 0px;
 }
 
+hr {
+  max-width:100% !important;
+  height: 2px;
+  background-color:$white;
+  margin-bottom:25px;
+}
+
+
 // ######### Landing Page ###########
+.featured-image{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+ }
 .landing-image{
   padding: 4em;
-  background: url("https://wallpapercave.com/wp/wp3395293.jpg");
   background-size: cover;
-  height: 100vh;
   margin: 0;
 }
 
@@ -43,6 +61,25 @@ body{
   font-style: italic;
   color: $white;
 }
+
+.landing-text-header{
+  font-family: $title-font2;
+  text-align: left;
+  font-style: italic;
+  color: $white;
+}
+
+.landing-text-title{
+  font-family: $title-font5;
+  text-align: center;
+  color: $white;
+}
+
+p.landing-text-title {
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
 .green{
   padding: 0px 18px ;
   border: 5px solid green;

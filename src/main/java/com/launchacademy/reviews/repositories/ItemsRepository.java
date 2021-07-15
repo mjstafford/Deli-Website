@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ItemsRepository extends CrudRepository<Items, Integer> {
 
+  Iterable<Items> findByFeaturedTrue();
 }
