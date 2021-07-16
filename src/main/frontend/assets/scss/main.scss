@@ -119,3 +119,42 @@ div.container {
 
 }
 // ######### Landing Page END ###########
+.top-bar, .NavBar, ul{
+  width:100%;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU2NjYWc5ATVXAkqth1igD1eRug5K6xaGN8A&usqp=CAU");
+  background-size: 400px;
+  width: 100%;
+  height: 100px;
+  border-bottom: 2px solid;
+  color: grey;
+  background-color:none;
+}
+
+ul, li, .top-bar {
+  background-color:none;
+}
+
+.li-text {
+  font-size: 2rem;
+  align-text: center;
+}
+
+.button-text{
+  font-family: $title-font4;
+  font-style: italic;
+  color: $white;
+}
+
+button {
+  height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  transition-duration: .8s;
+  text-align: center;
+   font-size: 3rem;
+}
+
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}

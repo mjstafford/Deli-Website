@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import FeaturedFoodTile from "./FeaturedFoodTile"
-import MyGoogleMap from "./MyGoogleMap"
+import FeaturedFoodTile from "./FeaturedFoodTile.js"
+import MyGoogleMap from "./MyGoogleMap.js"
 
 const LandingPage = () => {
   const [featuredItems, setFeaturedItems] = useState([])
@@ -43,11 +43,6 @@ const LandingPage = () => {
   return (
   <div className=" grid-y grid-padding-y">
     <div className="landing-image ">
-      <h1 className="landing-text">
-        <span className="red"> Open Wide </span>
-        <span className="green">Deli </span>
-      </h1>
-
       <div className="featured-food">
         <h1 className="landing-text-header">Featured Food</h1>
         <hr/>
