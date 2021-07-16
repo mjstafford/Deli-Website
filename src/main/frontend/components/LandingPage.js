@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import FeaturedFoodTile from "./FeaturedFoodTile"
+import MyGoogleMap from "./MyGoogleMap"
 
 const LandingPage = () => {
   const [featuredItems, setFeaturedItems] = useState([])
@@ -66,7 +67,7 @@ const LandingPage = () => {
         <div className="location-map small-12 large-5">
           <h1 className="landing-text-header">Location</h1>
           <hr/>
-          <img className="image" src="https://oobrien.com/wordpress/wp-content/uploads/2016/07/googlemaps_july2016.jpg" alt="fake map"  align="center"/>
+          <MyGoogleMap />
         </div>
       </div>
     </div>
