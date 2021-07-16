@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
@@ -18,13 +18,13 @@ const MyGoogleMap = props => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{ lat: latitude, lng: longitude }}
-        zoom={15}
+        zoom={16}
       >
 
         <Marker
           key={ latitude + longitude }
           position={{ lat: latitude, lng: longitude }}
-          label={name}
+          label={"Open Wide Deli"}
         />
         <></>
       </GoogleMap>
