@@ -6,6 +6,7 @@ target/
 **/node_modules
 *.lesson.json
 .etignore
+.env
 
 ### STS ###
 .apt_generated

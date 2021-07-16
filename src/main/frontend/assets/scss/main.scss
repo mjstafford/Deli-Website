@@ -1,8 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
-*,
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat+Subrayada&family=Pattaya&family=Rock+Salt&family=Nunito:wght@700&family=Permanent+Marker&display=swap');*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -13,9 +13,109 @@
   tab-size: 4;
 }
 
-.pet-image {
-  width: 40%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+$title-font: 'Montserrat Subrayada', sans-serif;
+$title-font2: 'Rock Salt', cursive;
+$title-font3: 'Allura', cursive;
+$title-font4: 'Pattaya', sans-serif;
+$title-font5: 'Nunito', sans-serif;
+$title-font6: 'Permanent Marker', cursive;
+
+$white: #ffffff;
+
+body{
+  color: $white;
+    background: url("https://wallpapercave.com/wp/wp3395293.jpg");
+    background-repeat: repeat-y;
 }
+
+.image{
+  margin: 10px 20px 10px 0px;
+}
+
+hr {
+  max-width:100% !important;
+  height: 2px;
+  background-color:$white;
+  margin-bottom:25px;
+}
+
+
+// ######### Landing Page ###########
+.featured-image{
+    width: 500px;
+    height: 300px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+ }
+.landing-image{
+  padding: 4em;
+  background-size: cover;
+  margin: 0;
+}
+
+.landing-text{
+  font-family: $title-font4;
+  text-align: left;
+  font-style: italic;
+  color: $white;
+}
+
+.landing-text-header{
+  font-family: $title-font2;
+  text-align: left;
+  font-style: italic;
+  color: $white;
+}
+
+.landing-text-title{
+  font-family: $title-font5;
+  text-align: center;
+  color: $white;
+}
+
+p.landing-text-title {
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.green{
+  padding: 0px 18px ;
+//   border: 5px solid green;
+  border-radius: 5rem ;
+  color: green;
+}
+
+.featured-food, .about-us, .location-map{
+  margin: 10px 0px;
+  padding: 0px 18px;
+//   border: 3px solid green;
+  border-radius: 1rem ;
+}
+.about-us {
+  margin: 10px 10px 10px 0px;
+}
+
+div.polaroid {
+  width: 80%;
+  height:95%;
+  background-color: #2B2B2B;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  padding:10px;
+  border-style: groove;
+  border-radius: 2rem;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.image-chef{
+  margin: 10px 20px 10px 0px;
+  border-radius: 100%;
+
+}
+// ######### Landing Page END ###########
