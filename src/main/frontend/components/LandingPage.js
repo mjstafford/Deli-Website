@@ -30,7 +30,7 @@ const LandingPage = () => {
   //map items to tiles
   const featuredTilesMap = featuredItems.map(item => {
     return(
-      <div className="cell small-12 medium-auto large-auto grid-margin-x">
+      <div className="cell small-12 medium-6 large-auto">
         <FeaturedFoodTile
           key={item.id}
           featuredItem={item}

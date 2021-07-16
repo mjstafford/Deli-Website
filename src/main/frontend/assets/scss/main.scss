@@ -42,8 +42,8 @@ hr {
 
 // ######### Landing Page ###########
 .featured-image{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
@@ -95,6 +95,21 @@ p.landing-text-title {
 }
 .about-us {
   margin: 10px 10px 10px 0px;
+}
+
+div.polaroid {
+  width: 80%;
+  height:95%;
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  padding:10px;
+  border-style: groove;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
 }
 
 // ######### Landing Page END ###########
