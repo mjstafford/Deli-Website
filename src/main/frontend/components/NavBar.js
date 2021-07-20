@@ -14,28 +14,28 @@ const NavBar = () => {
 
   window.addEventListener('scroll', smallNavbar)
 
-  let classString = "top-bar NavBar sticky"
+  let classString = ""
   if(scrolling){
     classString += ' active'
   }
 
   return(
-    <nav className="navbar sticky">
+    <nav className={"navbar sticky"+ classString}>
       <div className="container-navbar-left">
         <button>
-          <Link className="navbar-logo" to="/">Open Wide Deli</Link>
+          <Link className={"navbar-logo" + classString} to="/">Open Wide Deli</Link>
         </button>
       </div>
       <div className="container-navbar-right">
         <div className="dropdown">
-          <button className="dropbtn">Menu Items ≡</button>
+          <button className={"dropbtn" + classString}>Menu Items ≡</button>
           <div className="dropdown-content">
             <Link className="" to="/open-wide-deli/food">Food</Link>
             <Link className="" to="/open-wide-deli/drinks">Drinks</Link>
           </div>
         </div>
-          <Link className="" to="/open-wide-deli/location">Location</Link>
-          <Link className="" to="/open-wide-deli/about-us">About Us</Link>
+          <Link className={classString} to="/open-wide-deli/location">Location</Link>
+          <Link className={classString} to="/open-wide-deli/about-us">About Us</Link>
       </div>
     </nav>
   )
