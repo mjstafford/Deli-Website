@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import FeaturedFoodTile from "./FeaturedFoodTile"
-import MyGoogleMap from "./MyGoogleMap"
+import FeaturedFoodTile from "./FeaturedFoodTile.js"
+import MyGoogleMap from "./MyGoogleMap.js"
+import AboutUs from "./AboutUs.js"
 
 const LandingPage = () => {
   const [featuredItems, setFeaturedItems] = useState([])
@@ -40,16 +41,27 @@ const LandingPage = () => {
     )
   })
 
+  let months = new Map()
+  months.set(0,"January")
+  months.set(1,"February")
+  months.set(2,"March")
+  months.set(3,"April")
+  months.set(4,"May")
+  months.set(5,"June")
+  months.set(6,"July")
+  months.set(7,"August")
+  months.set(8,"September")
+  months.set(9,"October")
+  months.set(10,"November")
+  months.set(11,"December")
+  const date = new Date();
+  const month = months.get(date.getMonth());
+
   return (
   <div className=" grid-y grid-padding-y">
     <div className="landing-image ">
-      <h1 className="landing-text">
-        <span className="red"> Open Wide </span>
-        <span className="green">Deli </span>
-      </h1>
-
       <div className="featured-food">
-        <h1 className="landing-text-header">Featured Food</h1>
+        <h1 className="landing-text-header">{month}'s Featured Food</h1>
         <hr/>
         <div className="grid-x">
           {featuredTilesMap}
@@ -58,10 +70,7 @@ const LandingPage = () => {
 
       <div className="grid-x grid-padding-x" >
         <div className="about-us cell small-12 large-6">
-            <h1 className="landing-text-header">About Us</h1>
-            <hr className="landing-hr"/>
-            <img className="image-chef" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/34121324_103495260547748_6042988899226091520_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=6wu7V6SzaZEAX9Kladc&_nc_ht=scontent-sea1-1.xx&oh=42002d9f081de18e3925707c116a7740&oe=60F4F109" alt="chef Joe Shirley" width="300" height="200"  align="left"/>
-            <> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur augue ac purus convallis, ultricies pellentesque nisi tristique. Ut ullamcorper nulla mauris, molestie iaculis sapien interdum vitae. Praesent in ex nisl. Etiam a finibus mauris. Phasellus rutrum sit amet mauris non elementum. Nunc in ligula a arcu auctor ultrices at eget elit. Pellentesque egestas ac velit at pellentesque. Mauris non consequat mauris. Donec vel odio mi. Aenean dictum, odio et cursus ornare, mauris lectus pretium risunsequat ultrices. Aliqua.</>
+          <AboutUs />
         </div>
 
         <div className="location-map small-12 large-5">
