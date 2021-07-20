@@ -145,10 +145,13 @@ div.container {
   font-size: 3.5rem;
 }
 
-.container-navbar-left .active, .dropdown.dropdown .active, .navbar .active {
+.container-navbar-left .active, .dropdown .dropbtn.active, .navbar .active {
   font-size: 2rem;
   padding: 0 1rem;
 }
+ .dropdown .dropbtn.active{
+  margin-top:10px;
+ }
 
 .navbar a {
   float: left;
