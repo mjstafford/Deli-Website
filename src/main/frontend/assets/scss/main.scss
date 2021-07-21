@@ -49,6 +49,7 @@ hr {
     margin-right: auto;
     display: block;
  }
+
 .landing-image{
   padding: 4em;
   background-size: cover;
@@ -114,8 +115,10 @@ div.container {
 }
 
 .image-chef{
-  margin: 10px 20px 10px 0px;
+  margin: 00px 20px 0px 0px;
+  padding-top: 20px;
   border-radius: 100%;
+  background: white;
 
 }
 // ######### Landing Page END ###########
@@ -215,3 +218,50 @@ div.container {
   display: block;
 }
 // ######### NavBar END ###########
+
+// ######### Index Pages START ###########
+
+.food-index-item {
+  min-width: 500px;
+  max-width: 600px;
+  text-align: -webkit-center
+}
+
+.food-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.food-index-container > div {
+  flex:0 33% ;
+  margin: 10px;
+}
+
+// ######### Index Pages END ###########
+
+// ######### Show Page END ###########
+div.polaroid-show {
+  width: 80%;
+  height:95%;
+  background-color: #180707;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  padding:10px;
+  border-style: groove;
+  border-radius: 1rem;
+  min-width: 500px;
+}
+
+.show-image {
+  margin: 10px 20px 10px 0px;
+  border-radius: 1rem;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: solid #484444;
+}
+
+// ######### Show Page END ###########
