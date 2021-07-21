@@ -99,6 +99,7 @@ public class ItemsSeeder {
       item10.setName("Vegan chicken");
       item10.setDescription("Grilled vegan chicken");
       item10.setCost(2.00);
+      item10.setImage("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png");
       item10.setFoodCategories(Substitute);
 
 
