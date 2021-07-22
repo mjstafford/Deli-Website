@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const FeaturedFoodTile = (props) => {
   const {name, description, image, id} = props.featuredItem
-  console.log(id)
 
   return (
     <div className="polaroid">

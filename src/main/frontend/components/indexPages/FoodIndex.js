@@ -37,15 +37,19 @@ const FoodIndex = ()=> {
       }
     })
 
-    console.log(foodMap)
-    console.log(foodMap.keys())
-    console.log(foodMap.get("Sandwich"))
-    console.log(Object.entries(foodMap))
-  }
+    //iterate over map to put each k:v into an array as its own map
 
-  useEffect(() => {
-    filter()
-  }, [foodItems])
+    const foodArray = []
+    Array.from(foodMap.entries()).forEach(item => {
+//      console.log(item)
+      const newFoodMap = new Map()
+      newFoodMap.set(item[0], item[1])
+      foodArray.push(newFoodMap)
+    })
+    console.log(foodArray)
+//    console.log(foodMap)
+    return foodMap
+  }
 
   const foodTiles = foodItems.map(food => {
       return(
@@ -57,6 +61,22 @@ const FoodIndex = ()=> {
         </div>
       )
   })
+
+
+  useEffect(() => {
+    filter()
+  }, [foodItems])
+
+//  const foodTiles = foodItems.map(food => {
+//      return(
+//        <div className="food-index-item">
+//          <FeaturedFoodTile
+//            key={food.id}
+//            featuredItem={food}
+//          />
+//        </div>
+//      )
+//  })
 
   //show all foods
     //link to showPages
