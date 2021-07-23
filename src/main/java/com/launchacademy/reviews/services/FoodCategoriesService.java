@@ -1,6 +1,7 @@
 package com.launchacademy.reviews.services;
 
 import com.launchacademy.reviews.models.FoodCategories;
+import com.launchacademy.reviews.models.Items;
 import com.launchacademy.reviews.repositories.FoodCategoriesRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,9 @@ public class FoodCategoriesService {
 
   public List<FoodCategories> findByName(String name) {
     return foodCategoriesRepository.findByName(name);
+  }
+
+  public Iterable<FoodCategories> findAll() {
+    return foodCategoriesRepository.findAll();
   }
 }

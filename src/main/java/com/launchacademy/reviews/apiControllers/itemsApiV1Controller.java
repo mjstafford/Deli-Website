@@ -1,6 +1,8 @@
 package com.launchacademy.reviews.apiControllers;
 
+import com.launchacademy.reviews.models.FoodCategories;
 import com.launchacademy.reviews.models.Items;
+import com.launchacademy.reviews.services.FoodCategoriesService;
 import com.launchacademy.reviews.services.ItemService;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,10 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/items")
 public class itemsApiV1Controller {
   private ItemService itemService;
+  private FoodCategoriesService foodCategoriesService;
+
 
   @Autowired
-  public itemsApiV1Controller(ItemService itemService) {
+  public itemsApiV1Controller(ItemService itemService, FoodCategoriesService foodCategoriesService) {
     this.itemService = itemService;
+    this.foodCategoriesService = foodCategoriesService;
   }
 
   @GetMapping("/featured")
@@ -55,6 +60,12 @@ public class itemsApiV1Controller {
       itemMap.put("item", null);
       return new ResponseEntity<Map<String, Items>>(itemMap, HttpStatus.NOT_FOUND);
     }
+  }
+  @GetMapping("/categories")
+  public ResponseEntity<Map<String, Iterable<FoodCategories>>> getItemCategories(){
+    Map<String, Iterable<FoodCategories>> itemCategories = new HashMap<>();
+    itemCategories.put("itemCategories", foodCategoriesService.findAll());
+    return new ResponseEntity<>(itemCategories, HttpStatus.OK);
   }
 
 }

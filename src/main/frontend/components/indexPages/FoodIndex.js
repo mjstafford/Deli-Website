@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 import FeaturedFoodTile from "../landingPage/FeaturedFoodTile.js"
+import ItemFilterButtons from "./ItemFilterButtons.js"
 
 const FoodIndex = ()=> {
   const [foodItems, setFoodItems] = useState([])
-  //save all food in state
+  const [filteredFoodItems, setFilteredFoodItems] = useState([])
 
-  //fetch all food
   const fetchFoods = async ()=> {
     try{
       const response = await fetch("/api/v1/items/food")
@@ -17,6 +17,7 @@ const FoodIndex = ()=> {
       }
       const foodData = await response.json()
       setFoodItems(foodData.foodItems)
+      setFilteredFoodItems(foodData.foodItems)
     } catch (error){
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -25,10 +26,10 @@ const FoodIndex = ()=> {
     fetchFoods()
   }, [])
 
-  //working on trying to get headers for each type of food
+  //Make an array of maps where each map is a category(k) and array of items(v)
   const filter =  ()=> {
     const foodMap = new Map();
-    foodItems.forEach(item => {
+    filteredFoodItems.forEach(item => {
       if(foodMap.has(item.foodCategories.name)){
         foodMap.set(item.foodCategories.name, [...foodMap.get(item.foodCategories.name), item])
       } else {
@@ -37,33 +38,69 @@ const FoodIndex = ()=> {
       }
     })
 
-    console.log(foodMap)
-    console.log(foodMap.keys())
-    console.log(foodMap.get("Sandwich"))
-    console.log(Object.entries(foodMap))
+    const foodArray = []
+    Array.from(foodMap.entries()).forEach(item => {
+      const newFoodMap = new Map()
+      newFoodMap.set(item[0], item[1])
+      foodArray.push(newFoodMap)
+    })
+//    console.log(foodArray)
+    return foodArray
   }
+
+  //iterate over filterArray to create Headers with all corresponding Items from category
+  const foodTiles = filter().map(food => {
+    const foodTilesByCategory = food.values().next().value.map(foodItem => {
+      return(
+        <div className="food-index-item">
+          <FeaturedFoodTile
+            key={foodItem.id}
+            featuredItem={foodItem}
+          />
+        </div>
+      )
+    })
+
+    return (
+      <div className="index-container index-reduce-margin">
+        <h1 className="landing-text-header">{food.keys().next().value} </h1>
+        <hr className="hr-index"/>
+        <div className="food-index-container">
+          {foodTilesByCategory}
+        </div>
+      </div>
+    )
+  })
 
   useEffect(() => {
     filter()
   }, [foodItems])
 
-  const foodTiles = foodItems.map(food => {
-      return(
-        <div className="food-index-item">
-          <FeaturedFoodTile
-            key={food.id}
-            featuredItem={food}
-          />
-        </div>
-      )
-  })
+    const filterFood = (event)=> {
+      event.preventDefault()
+      const filterForCategory = event.currentTarget.value
+      let filterFoodArray = []
 
-  //show all foods
-    //link to showPages
+      if(filterForCategory == "All") {
+        filterFoodArray = [...foodItems]
+        setFilteredFoodItems(filterFoodArray)
+      } else {
+        filterFoodArray = foodItems.filter((item) => {
+          return item.foodCategories.name === (filterForCategory)
+        })
+        setFilteredFoodItems(filterFoodArray)
+      }
+//      console.log(filterFoodArray)
+    }
 
   return (
-    <div className="food-index-container">
-      {foodTiles}
+    <div >
+      <ItemFilterButtons
+        filterFood={filterFood}
+      />
+      <div>
+        {foodTiles}
+      </div>
     </div>
   )
 }
