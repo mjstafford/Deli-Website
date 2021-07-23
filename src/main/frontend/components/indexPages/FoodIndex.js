@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import FeaturedFoodTile from "../landingPage/FeaturedFoodTile.js"
+import ItemFilterButtons from "./ItemFilterButtons.js"
 
 const FoodIndex = ()=> {
   const [foodItems, setFoodItems] = useState([])
@@ -43,7 +44,7 @@ const FoodIndex = ()=> {
       newFoodMap.set(item[0], item[1])
       foodArray.push(newFoodMap)
     })
-    console.log(foodArray)
+//    console.log(foodArray)
     return foodArray
   }
 
@@ -75,7 +76,6 @@ const FoodIndex = ()=> {
     filter()
   }, [foodItems])
 
-    const buttonClass = "btn "
     const filterFood = (event)=> {
       event.preventDefault()
       const filterForCategory = event.currentTarget.value
@@ -90,23 +90,14 @@ const FoodIndex = ()=> {
         })
         setFilteredFoodItems(filterFoodArray)
       }
-      console.log(filterFoodArray)
+//      console.log(filterFoodArray)
     }
-    //figure out how to keep button active
 
   return (
     <div >
-      <div className="filter-div">
-        <div className="filter-div-white">
-          <button className={buttonClass} onClick={filterFood} value="All"> All items</button>
-          <button className={buttonClass} onClick={filterFood} value="Side"> Sides </button>
-          <button className={buttonClass} onClick={filterFood} value="Sandwich"> Sandwiches</button>
-          <button className={buttonClass} onClick={filterFood} value="Salad"> Salads</button>
-          <button className={buttonClass} onClick={filterFood} value="Wrap"> Wraps</button>
-          <button className={buttonClass} onClick={filterFood} value="Wings"> Wings</button>
-          <button className={buttonClass} onClick={filterFood} value="Substitute"> Substitutes</button>
-        </div>
-      </div>
+      <ItemFilterButtons
+        filterFood={filterFood}
+      />
       <div>
         {foodTiles}
       </div>
