@@ -6,7 +6,7 @@ const FeaturedFoodTile = (props) => {
   console.log(id)
 
   return (
-    <div className="polaroid-show">
+    <div className="polaroid-show ">
       <img className="show-image" src={image}  />
       <div className="container">
         <h2 className="landing-text-title">{name} - ${cost}</h2>

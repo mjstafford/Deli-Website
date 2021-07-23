@@ -26,17 +26,23 @@ const DrinkIndex = ()=> {
 
   const drinkTiles = drinkItems.map(drink => {
       return(
-        <div className="food-index-item">
-          <FeaturedFoodTile
-            key={drink.id}
-            featuredItem={drink}
-          />
+        <div className="index-container">
+          <h1 className="landing-text-header">Drink's </h1>
+          <hr className="hr-index"/>
+          <div className="food-index-container">
+            <div className="food-index-item">
+              <FeaturedFoodTile
+                key={drink.id}
+                featuredItem={drink}
+              />
+            </div>
+          </div>
         </div>
       )
   })
 
   return (
-    <div className="food-index-container">
+    <div>
       {drinkTiles}
     </div>
   )
